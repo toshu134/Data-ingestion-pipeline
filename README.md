@@ -20,15 +20,30 @@ This project demonstrates a fully automated **ETL pipeline** using **PySpark**, 
 ```bash
 celebal-project/
 ├── data_generation.py     # Generates fake name, address, email using Faker
+├── Ingestion_csv          # (Auto-generated) stores the being generated into a csv file 
 ├── email_utils.py         # Uses LlamaIndex + Groq LLM to generate summary and send email
 ├── main_pipeline.py       # Master pipeline: generates, ingests, reads, summarizes and emails
 ├── spark.py               # Handles Spark session init, Delta write/read/versioning
+├── data/                  # (Auto-generated) Delta table directory with version history
 ├── requirements.txt       # List of Python packages
 └── README.md              # Project overview and instructions
 ```
 
 ---
+## 💾 Data Storage Details
 
+- **CSV (Optional):**  
+  While currently not written, the fake data can easily be saved as a `.csv` using:
+  ```python
+  df.to_csv(f"batch_{timestamp}.csv", index=False)
+  ```
+  Useful for keeping a local log of batches.
+
+- **Delta Table:**  
+  Spark writes all records to a Delta table stored in the `data/` directory in **transactional parquet format**, maintaining **version history** using `DeltaTable.history()`.
+---
+
+---
 ## ⚙️ How It Works
 
 1. `data_generation.py` creates 1000 fake records every cycle.
