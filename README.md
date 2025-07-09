@@ -24,9 +24,6 @@ celebal-project/
 ├── main_pipeline.py       # Master pipeline: generates, ingests, reads, summarizes and emails
 ├── spark.py               # Handles Spark session init, Delta write/read/versioning
 ├── requirements.txt       # List of Python packages
-├── samples/
-│   ├── sample_output.csv  # (Optional) Sample preview of ingested data
-│   └── email_preview.png  # (Optional) Screenshot of AI-generated email
 └── README.md              # Project overview and instructions
 ```
 
@@ -80,29 +77,10 @@ In `email_utils.py`:
   [How to Get App Password →](https://support.google.com/accounts/answer/185833)
 
 ---
+![image](https://github.com/user-attachments/assets/4a894589-4143-40db-9cac-deef973fc144)
 
-## 📸 Optional Snapshots
+![image](https://github.com/user-attachments/assets/18ac42e9-45b4-402f-8d2f-a5d8d61bdf13)
 
-You can add a `samples/` folder containing:
-- `sample_output.csv`: Top 5 rows from the ingested DataFrame
-- `email_preview.png`: Screenshot of email with AI summary
-
-These are **not required**, but helpful for demos or GitHub viewers.
-
----
-
-## 🛠 requirements.txt
-
-```
-pyspark==3.3.2
-delta-spark==2.2.0
-faker
-pandas
-llama-index
-llama-index-llms-groq
-```
-
----
 
 ## 👤 Author
 
