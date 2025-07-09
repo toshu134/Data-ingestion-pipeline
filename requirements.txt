@@ -1,0 +1,6 @@
+pyspark==3.3.2
+delta-spark==2.2.0
+faker
+pandas
+llama-index
+llama-index-llms-groq
